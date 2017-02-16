@@ -7,4 +7,4 @@
 
 
 [1]: https://youzhanghao.github.io/markdone/index.html "Markdown的学习"
-[2]: https://github.com/youzhanghao/youzhanghao.github.io/tree/dev/git/learn_git.md "Git的学习"
+[2]: https://github.com/youzhanghao/youzhanghao.github.io/blob/master/git/learn_git.md "Git的学习"
