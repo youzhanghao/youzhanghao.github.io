@@ -1,5 +1,12 @@
-Markdown
-==============
+---
+layout:     post
+title:      Markdown
+category: blog
+description: 写博客这个这么古老的行为，还有必要拿出来说吗，我看有。
+---
+
+# Markdown
+
 
 
 ## 目录
@@ -376,12 +383,9 @@ Github的Markdown语法支持添加emoji表情，输入不同的符号码（两�
 ---------
 
 [block]:https://developer.mozilla.org/zh-CN/docs/Web/HTML/Block-level_elements  "块级元素"
-
 [typora]: https://typora.io/	"typora官方"
-
 [foryou]: https://github.com/guodongxiaren/ImageCache/raw/master/Logo/foryou.gif
 [editor]: https://www.zhihu.com/question/22700184	"Mac markdown editor"
-
 [baidu]: Https://www.baidu.com	"百度"
 [MarkdownCN]: https://markdown-zh.readthedocs.io/en/latest/	"Markdown CN docs"
 [Flavored]: https://github.com/guodongxiaren/README

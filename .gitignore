@@ -8,3 +8,5 @@ about.md
 Gemfile
 Gemfile.lock
 .idea/
+.DS_Store
+__includes/
