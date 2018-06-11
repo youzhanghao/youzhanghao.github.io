@@ -2,7 +2,7 @@
 layout:     post
 title:      Markdown
 category: markdown
-description: more writing more money
+description: markdown
 ---
 
 # Markdown
