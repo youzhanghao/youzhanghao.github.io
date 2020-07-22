@@ -1,61 +1,46 @@
-# blog
-## Options
+# jekyll-rtd-theme
+[![Gem Version](https://img.shields.io/gem/v/jekyll-rtd-theme)][gem]
+[![Gem Downloads](https://img.shields.io/gem/dt/jekyll-rtd-theme)][gem]
+[![Users](https://img.shields.io/endpoint?url=https://rundocs-analytics.glitch.me/shields)](https://github.com/rundocs/analytics)
+[![Jsdelivr hits](https://data.jsdelivr.com/v1/package/gh/rundocs/static/badge)](https://cdn.jsdelivr.net/gh/rundocs/static/)
 
-| name          | default value        | description       |
-| ------------- | -------------------- | ----------------- |
-| `title`       | repo name            |                   |
-| `description` | repo description     |                   |
-| `url`         | user domain or cname |                   |
-| `baseurl`     | repo name            |                   |
-| `lang`        | `en`                 |                   |
-| `direction`   | `auto`               | `ltr` or `rtl`    |
-| `highlighter` | `rouge`              | Cannot be changed |
+Just another Jekyll theme for GitHub Pages based on ReadtheDocs's sphinx_rtd_theme styles
 
-```yml
-# folders sort
-readme_index:
-  with_frontmatter: true
+## Installation
+There are two ways to install: as a gem-based theme, as a remote theme (GitHub Pages compatible)
 
-meta:
-  key1: value1
-  key2: value2
-  .
-  .
-  .
+#### Gem-based method
+1. Add the following to your github repository's `Gemfile`
+    ```ruby
+    source "https://rubygems.org"
+    gem "jekyll-rtd-theme"
+    gem "github-pages", group: :jekyll_plugins
+    ```
+2. Add the following to your github repository's `_config.yml`
+    ```yml
+    theme: jekyll-rtd-theme
+    ```
 
-google:
-  gtag:
-  adsense:
+#### Remote theme method
+1. Add the following to your site's `_config.yml`
+    ```yml
+    remote_theme: rundocs/jekyll-rtd-theme
+    ```
+2. Remove any other `theme` or `remote_theme` entry
 
-mathjax: # this will prased to json, default: {}
 
-mermaid:
-  custom:     # mermaid link
-  initialize: # this will prased to json, default: {}
+## Roadmap
+See the [open issues][issues] for a list of proposed features (and known issues).
 
-scss:   # also _includes/extra/styles.scss
-script: # also _includes/extra/script.js
 
-translate:
-  # shortcodes
-  danger:
-  note:
-  tip:
-  warning:
-  # 404
-  not_found:
-  # copyright
-  revision:
-  # search
-  searching:
-  search:
-  search_docs:
-  search_results:
-  search_results_found: # the "#" in this translate will replaced with results size!
-  search_results_not_found:
+## Contributing
+1. Clone down the theme's repository (`git clone https://github.com/rundocs/jekyll-rtd-theme.git`)
+2. `cd` into the theme's directory
+3. Run `bundle` to install the necessary dependencies
+4. Run `bundle exec jekyll server` to start the preview server
+5. Visit [`http://localhost:4000`](http://localhost:4000) in your browser to preview the theme
 
-plugins:
-  - jemoji
-  - jekyll-avatar
-  - jekyll-mentions
-```
+
+[gem]: https://rubygems.org/gems/jekyll-rtd-theme
+[issues]: https://github.com/rundocs/jekyll-rtd-theme/issues
+
