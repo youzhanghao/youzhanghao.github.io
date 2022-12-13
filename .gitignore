@@ -1,12 +1,36 @@
-# Created by .ignore support plugin (hsz.mobi)
-### Jekyll template
-_site/
-.sass-cache/
-.jekyll-cache/
+# jekyll
 .jekyll-metadata
-about.md
-Gemfile
+_site
+.sass-cache
+.jekyll-cache
+
+
+# bundler
+*.gem
 Gemfile.lock
-.idea/
-.DS_Store
-_includes/
+
+
+# python
+*.whl
+
+
+# npm
+node_modules
+package-lock.json
+
+
+# _sass
+_sass/@primer/css/**/*.md
+
+
+# lighthouse
+*.report.html
+
+
+# action
+action.changelog.md
+
+# test folder
+test
+test_long
+_site
