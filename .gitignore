@@ -31,5 +31,5 @@ _sass/@primer/css/**/*.md
 action.changelog.md
 
 #idea
-#.idea
-#.github
+.idea
+.github
