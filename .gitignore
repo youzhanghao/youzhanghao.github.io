@@ -32,6 +32,8 @@ action.changelog.md
 
 # idea
 .idea
+.DS_Store
+assets/.DS_Store
 # test doc
 test
 test_long
