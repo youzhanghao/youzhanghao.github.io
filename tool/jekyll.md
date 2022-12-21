@@ -134,6 +134,116 @@ $ bundle exec jekyll build
 # 启动
 $ bundle exec jekyll server
 ```
-_若觉得麻烦，可自行定义快捷方式_
+## Jekyll主题应用
+
+> 以jekyll-rtd-theme为例
+
+1.github中找到喜欢的主题，将其推送至你的仓库，你的仓库名应该为`yourname/youname.github.io`
+
+> 你可以通过fork的形式，或clone下来推送至你的项目
+> 
+> 注意：阅读主题的说明文件，将有助于你避免不必要的麻烦
+
+2.依据你的需要修改配置文件
+
+> 参考配置文件
+
+`Gemfile`
+
+```Gemfile
+source "https://rubygems.org" # source "https://gems.ruby-china.com"
+
+gemspec
+
+# github pages
+gem "github-pages", group: :jekyll_plugins
+
+# 时间插件
+group :jekyll_plugins do
+  gem "jekyll-last-modified-at"
+end
+```
+`_config.yml`
+
+```yaml
+title: Youzhanghao's Blog
+description: Record Something
+author: youzhanghao
+# 主题
+theme: jekyll-rtd-theme
+# 编码
+encoding: utf-8
+# 时区
+timezone: Asia/Shanghai
+
+# debug是否开启
+#debug:
+# compress: true
+# dist: false
+# shortcodes: true
+
+readme_index:
+  with_frontmatter: true
+# 应用插件
+plugins:
+  - jemoji
+  - jekyll-avatar
+  - jekyll-mentions
+  - jekyll-last-modified-at
+# 排除在外的打包文件
+exclude:
+  - Makefile
+  - CNAME
+  - LICENSE
+  - update.sh
+  - Gemfile
+  - Gemfile.lock
+  - requirements.txt
+  - node_modules
+  - package.json
+  - package-lock.json
+  - webpack.config.js
+  - jekyll-rtd-theme.gemspec
+  - test
+
+# Optional. The default date format, used if none is specified in the tag.
+last-modified-at:
+  date-format: '%Y-%m-%d %H:%M:%S'
+  use-git-cache: true
+```
+3.拓展修改
+
+> 以添加创建时间和更新时间为例
+
+修改`_includes/templates/content.liquid`
+```html
+{% raw %}
+<div class="content p-3 p-sm-5">
+        {% include templates/breadcrumbs.liquid %}
+        <hr>
+        {% include common/rest/variables.liquid param="schema_date"  %}
+        <p><em >发布时间：{{ schema_date | date:"%Y-%m-%d %H:%M:%S" }}</em>
+            <em style="float:right">更新时间：{% last_modified_at %}</em></p>
+        <div role="main" itemscope="itemscope" itemtype="https://schema.org/Article">
+            <div class="markdown-body" itemprop="articleBody">
+                {{ content }}
+            </div>
+        </div>
+        {% include templates/footer.liquid %}
+    </div>
+{% endraw %}
+```
+4.可能的问题
+
+在markdown文件里无法使用page变量等
+> 可能和编译的先后顺序有关，暂未定为根本原因，可以通过引入variable中的变量来使用，添加如下：
+> {% raw %}
+> {% include common/rest/variables.liquid param="schema_date"  %}
+> {% endraw %}
+
+5.延伸阅读
+
+[Github page的配置和快速发布][github-config]
 
 [jekyll-config]: /others/jekyll-install
+[github-config]: /others/github-push

@@ -23,6 +23,10 @@
 {%- assign schema_date = page.date | default: rest_created_at | date_to_xmlschema -%}
 {%- assign schema_modi = site.time | date_to_xmlschema -%}
 {%- assign schema_surl = page.url  | absolute_url | xml_escape -%}
+{%- assign schema_rel_url = page.url | relative_url | xml_escape -%}
+{%- assign base_url =  site.url -%}
+{%- assign base_image_url = site.url | append: '/assets/images' -%}
+
 
 {% comment %} debug {% endcomment %}
 {%- if site.debug -%}

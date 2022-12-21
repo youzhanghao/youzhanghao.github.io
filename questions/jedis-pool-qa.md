@@ -1,10 +1,10 @@
 ---
-
+title: 无法从Redis池中获取连接
 ---
 
 # Timeout waiting for idle object
 
-> 以下内容为笔者实践而来，并结合自己的推测整理。若有不对或疏漏的欢迎指出交流。
+> 以下内容为笔者实践而来，并结合自己的推测整理。若有不对或疏漏的欢迎交流。
 
 ##  问题引出
 > 现象：某次高并发过后，应用系统部分接口仍旧出现系统异常。查看应用日志，初步推断为redis连接池问题，查看grafana中的redis监控，redis客户端连接数较少
@@ -723,7 +723,7 @@ public void evict() throws Exception {
 
    官方网址：[jedis-3.6.0][jedis-3.6]
 
-   **注：**若你使用springboot配套的spring-data-redis，需要注意依赖的版本问题。关于如何查看项目依赖，请参考[maven依赖][maven-dep]
+   **注：**若你使用springboot配套的spring-data-redis，需要注意依赖的版本问题。关于如何查看项目依赖，请参考[spring-boot低版本升级jedis至3.6.0版本][maven-dep]
 
 2. 源码修改编译
    拉取Jedis源码包，修改Pool的构造方法，使其支持Abandon Config设置，重新编译，生成定制版的jar。
@@ -1282,11 +1282,11 @@ public void evict() throws Exception {
 [ab]: ../tool/ab.md
 [redis-stat]: ../tool/redis-stat
 [idea-debug]: ../tool/idea-remote-debug
-[Cache]: http://t.csdn.cn/J1Mgt
-[Redis-config]: http://t.csdn.cn/J1Mgt
+[Cache]: ../java/cacheAsspectSupport-read
+[Redis-config]: ../java/redis-config
 [idea-jar-debug]: ../tool/idea-jar-debug
 [jedis-pool]: ../java/jedis-pool
 [jedis-pool-bug]: https://hub.nuaa.cf/redis/jedis/pull/1918/commits/df1bffa3c77f4ede4c912f2c3e78b5c8857725e7
 [jedis-3.6]:https://hub.nuaa.cf/redis/jedis/blob/jedis-3.6.0/src/main/java/redis/clients/jedis/Jedis.java
-[maven-dep]: ../tool/maven-dependency
+[maven-dep]: ../tool/maven-dependency#spring-boot低版本升级jedis至360版本
 

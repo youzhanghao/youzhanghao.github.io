@@ -1,25 +1,28 @@
 title: Youzhanghao's Blog
 description: Record Something
 author: youzhanghao
-
+# 主题
 theme: jekyll-rtd-theme
+# 编码
 encoding: utf-8
+# 时区
 timezone: Asia/Shanghai
 
-debug:
- compress: true
- dist: false
- shortcodes: true
+# debug是否开启
+#debug:
+# compress: true
+# dist: false
+# shortcodes: true
 
 readme_index:
   with_frontmatter: true
-
+# 应用插件
 plugins:
   - jemoji
   - jekyll-avatar
   - jekyll-mentions
   - jekyll-last-modified-at
-
+# 排除在外的打包文件
 exclude:
   - Makefile
   - CNAME
