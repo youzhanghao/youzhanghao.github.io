@@ -1,10 +1,12 @@
 ---
-tilte: Jenkins
+title: Jenkins
 ---
+
+{%- assign base_image_url = site.url | append: '/assets/images' -%}
 
 #  Jenkins
 
-{% include common/rest/variables.liquid %}
+
 
 ## Jenkins安装
 1. 包安装，注意配置文件
