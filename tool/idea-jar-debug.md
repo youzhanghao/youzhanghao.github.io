@@ -1,7 +1,7 @@
 ---
 title: Idea中引入源码包调试
 ---
-{% include common/rest/variables.liquid %}
+{%- assign base_image_url = site.url | append: '/assets/images' -%}
 
 # Idea中引入源码包调试
 

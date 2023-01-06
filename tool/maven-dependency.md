@@ -1,7 +1,8 @@
 ---
 title: maven依赖管理
 ---
-{% include common/rest/variables.liquid %}
+{%- assign base_image_url = site.url | append: '/assets/images' -%}
+
 
 # maven依赖管理
 

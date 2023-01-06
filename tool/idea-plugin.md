@@ -1,7 +1,7 @@
 ---
 title: Idea常用插件及安装
 ---
-{% include common/rest/variables.liquid %}
+{%- assign base_image_url = site.url | append: '/assets/images' -%}
 
 
 # 常用插件

@@ -2,7 +2,6 @@
 
 # Maven
 
-{% include common/rest/variables.liquid %}
 
 ## Maven安装
 
