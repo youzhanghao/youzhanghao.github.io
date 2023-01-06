@@ -37,6 +37,7 @@ exclude:
   - webpack.config.js
   - jekyll-rtd-theme.gemspec
   - test
+  - docs
 
 # Optional. The default date format, used if none is specified in the tag.
 last-modified-at:
